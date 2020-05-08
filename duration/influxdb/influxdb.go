@@ -3,7 +3,9 @@ package influxdb
 import (
 	"time"
 
-	"github.com/influxdata/influxdb1-client/v2"
+	_ "github.com/influxdata/influxdb1-client"         // this is important because of the bug in go mod
+	client "github.com/influxdata/influxdb1-client/v2" // Go client API for InfluxDB 1.x.
+	// "github.com/influxdata/influxdb-client-go" new for 2.x
 )
 
 type Client struct {

@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/gin-gonic/gin"
-	"github.com/satori/go.uuid"
+	uuid "github.com/satori/go.uuid"
 )
 
 // bodyWriter implements gin.ResponseWriter
@@ -52,6 +52,6 @@ func RequestID(c *gin.Context) {
 
 // GenRequestID returns uuid
 func GenRequestID() string {
-	uid, _ := uuid.NewV4()
+	uid := uuid.NewV4()
 	return strings.ToUpper(uid.String())
 }
